@@ -1,0 +1,295 @@
+nav {
+  width: 100%;
+  height: 80px;
+  position: fixed;
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 100px;
+  left: 0;
+  top: 0;
+  background: linear-gradient(to right, #000000, #2c2c2c);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+  border-bottom: 2px solid rgba(0, 255, 255, 0.2);
+  background-size: 400% 400%;
+  animation: gradientShift 20s ease infinite;
+  will-change: background-position;
+  z-index: 1000;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 10%;
+    width: 80%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #00f7ff, transparent);
+    animation: flow 2s linear infinite;
+    pointer-events: none;
+    @media (max-width: 450px) {
+      animation: none;
+    }
+  }
+  @media (max-width: 1600px) {
+    padding: 0px 60px;
+  }
+  @media (max-width: 768px) {
+    padding: 0px 30px;
+    height: 90px;
+  }
+}
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes flow {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+nav ul {
+  font-family: "outfit";
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1;
+  margin-left: 50px;
+  @media (min-width: 1920px) {
+    justify-content: space-around;
+  }
+  & li:not(.me) {
+    background-color: transparent;
+    height: 100%;
+    & .li {
+      font-size: 1rem;
+      font-weight: bold;
+      padding: 12px 16px;
+      color: #eee;
+      letter-spacing: 1px;
+      transition: var(--transition-port);
+      border-radius: 7px;
+      border: none;
+      background-color: transparent;
+      cursor: pointer;
+      position: relative;
+
+      &:after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -4px;
+        width: 0%;
+        height: 2px;
+        background: linear-gradient(90deg, #00f7ff, var(--purple-neon));
+        box-shadow: 0 0 5px var(--neon-color);
+        transition: width 0.4s ease;
+        border-radius: 10px;
+      }
+
+      &:hover {
+        color: #00f7ff;
+        text-shadow: 0 0 5px #00f7ff, 0 0 10px var(--neon-color),
+          0 0 20px var(--neon-color), 0 0 30px var(--neon-color);
+        &::after {
+          width: 100%;
+        }
+      }
+      &.active {
+        pointer-events: none;
+        color: var(--neon-color);
+        background-color: #1c1c1c;
+        font-weight: 700;
+        &::after {
+          width: 100%;
+        }
+      }
+    }
+    & .hire {
+      padding: 10px 30px;
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #fff;
+      background: linear-gradient(45deg, #ff4500, #00ffff);
+      background-size: 400% 400%;
+      box-shadow: 0 0 15px rgba(255, 69, 0, 0.6),
+        0 0 30px rgba(0, 255, 255, 0.6);
+      border-radius: 50px;
+      will-change: background-position;
+      animation: gradientShift 4s ease infinite;
+      transition: var(--transition-port);
+      @media (max-width: 1600px) {
+        font-size: 1.25rem;
+        padding: 10px 25px;
+      }
+      @media (max-width: 1200px) {
+        font-size: 1.125rem;
+        padding: 10px 20px;
+      }
+      &:hover,
+      &:active {
+        box-shadow: 0 0 25px rgba(255, 69, 0, 0.8),
+          0 0 50px rgba(0, 255, 255, 0.8);
+      }
+    }
+  }
+  & li.me {
+    font-size: 0.875rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    line-height: 1.3;
+    color: #f5f5f5;
+    @media (max-width: 1600px) {
+      font-size: 0.8125rem;
+    }
+    @media (max-width: 1250px) {
+      display: none;
+    }
+    & .name {
+      padding: 5px;
+      & .eng {
+        color: var(--main-color);
+      }
+    }
+    & .job {
+      color: #999;
+    }
+  }
+}
+
+.logo {
+  font-family: "Ruthie", cursive;
+  background-color: transparent;
+  font-size: 2.2rem;
+  font-weight: bold;
+  height: 100%;
+  align-content: center;
+  letter-spacing: 2px;
+  color: #fff;
+  cursor: pointer;
+  padding: 0;
+  & .logo-mo {
+    color: #00f7ff;
+    text-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 15px #0ff;
+  }
+  & span.slash {
+    color: var(--slash-color);
+  }
+  @media (max-width: 1600px) {
+    font-size: 2rem;
+  }
+  @media (max-width: 1200px) {
+    font-size: 1.8rem;
+  }
+  @media (max-width: 768px) {
+    font-size: 1.6rem;
+  }
+
+  @media (min-height: 1600px) {
+    height: 4px;
+  }
+}
+
+/* Dropdown */
+.dropdown {
+  position: relative;
+  width: fit-content;
+  padding: 0 10px;
+  align-content: center;
+  height: 100%;
+}
+.dropdown-toggle {
+  position: relative;
+  background-color: transparent;
+  border: none;
+  padding: 1rem;
+  cursor: pointer;
+  &::before {
+    content: "";
+    position: absolute;
+    border: 10px solid;
+    border-color: rgba(0, 229, 255, 0.6) transparent transparent transparent;
+    bottom: -20px;
+    left: calc(50% - 10px);
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: var(--transition-port);
+  }
+  &:has(.active):before {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+.dropdown-toggle span {
+  display: block;
+  margin: 4px 0;
+  position: relative;
+  width: 40px;
+  height: 4px;
+  background-color: #f5f5f5;
+  border-radius: 5px;
+  transition: var(--transition-port);
+}
+
+.dropdown-toggle:hover span,
+.dropdown-toggle:has(.active) span {
+  background: #00e5ff;
+  box-shadow: 0 0 5px #00e5ff;
+  &:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+  }
+  &:nth-child(2) {
+    opacity: 0;
+  }
+  &:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg);
+  }
+}
+
+.dropdown-menu {
+  display: none;
+  position: fixed;
+  background: #252525;
+  top: 80px;
+  left: 0px;
+  width: 100vw;
+  text-align: left;
+  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: var(--transition-port);
+  @media (max-width: 768px) {
+    top: 90px;
+  }
+  & a {
+    color: #f5f5f5;
+    display: block;
+    position: relative;
+    padding: 1rem;
+    text-decoration: none;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    border-bottom: 1px solid rgba(245, 245, 245, 0.1);
+
+    &:last-of-type {
+      border: none;
+    }
+    &:hover {
+      background: rgba(0, 229, 255, 0.2);
+    }
+  }
+}
+.dropdown-toggle:hover .dropdown-menu,
+.dropdown-menu.active {
+  display: block;
+  animation: fadeInBottom 0.3s ease-out;
+}

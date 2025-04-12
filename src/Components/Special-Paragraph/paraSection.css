@@ -1,0 +1,18 @@
+.section-para {
+  color: #fff;
+  width: 100%;
+  margin: 20px auto;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 1.25rem;
+  font-size: clamp(0.75rem, 0.9vw + 0.2rem, 1.2rem);
+  line-height: 1.33;
+  transition: 0.5s;
+  letter-spacing: 1.5px;
+  padding: 15px 0;
+  background-color: #1a1a1ac7;
+  border-left: 3px solid var(--purple-neon);
+  border-right: 3px solid var(--purple-neon);
+  box-shadow: 12px 12px 12px rgba(0, 0, 0, 0.1), -10px -10px 10px #000 inset;
+  padding: 10px;
+}

@@ -1,0 +1,119 @@
+/* General Footer Styles */
+.footer {
+  color: #fff;
+  padding: 40px 20px;
+  font-family: "Roboto", sans-serif;
+  position: relative;
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 200px;
+  & h3 {
+    font-size: 1.5rem;
+    color: #ffffff;
+    margin-bottom: 15px;
+    @media (max-width: 1600px) {
+      font-size: 1.375rem;
+    }
+    @media (max-width: 1200px) {
+      font-size: 1.25rem;
+    }
+    @media (max-width: 993px) {
+      font-size: 1.125rem;
+    }
+    @media (max-width: 768px) {
+      font-size: 1rem;
+    }
+  }
+}
+
+.footer-section p,
+.footer-section ul,
+.footer-bottom p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #bbbbbb;
+  @media (max-width: 1600px) {
+    font-size: 0.9375rem;
+  }
+  @media (max-width: 993px) {
+    font-size: 0.875rem;
+  }
+  @media (max-width: 768px) {
+    font-size: 0.8125rem;
+  }
+}
+
+.footer-section ul {
+  list-style-type: none;
+  padding: 0;
+
+  & li {
+    margin-bottom: 10px;
+
+    & a {
+      text-decoration: none;
+      color: #bbbbbb;
+      transition: var(--transition-port);
+      &:hover {
+        color: var(--purple-neon);
+      }
+    }
+  }
+}
+
+/* Social Links */
+.social-links {
+  display: flex;
+  gap: 15px;
+  @media (max-width: 768px) {
+    justify-content: center;
+  }
+  & a {
+    font-size: 1.5rem;
+    color: #bbbbbb;
+    transition: transform 0.3s ease, color 0.3s ease;
+    &:hover {
+      color: var(--purple-color);
+    }
+  }
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+  border-top: 1px solid #555;
+  padding-top: 10px;
+  color: #2c2c2c;
+  & span {
+    color: #cccccc;
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-section {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+}

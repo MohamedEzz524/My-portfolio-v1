@@ -1,0 +1,321 @@
+#portfolio {
+  color: #fff;
+}
+
+.work {
+  /* background: #202020; */
+  background: #1a1a1a;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  border-radius: 12px;
+  border: 1px solid rgba(30, 30, 30, 0.4);
+  padding: 40px;
+  transition: var(--transition-port);
+  @media (max-width: 993px) {
+    padding: 20px;
+  }
+  @media (max-width: 600px) {
+    padding: 0px 0;
+    background: transparent;
+    border: none;
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+}
+.work-title {
+  position: relative;
+  width: fit-content;
+  margin: 20px 0;
+  font-size: 2.5rem;
+  color: #f5f5f5;
+  font-weight: bold;
+  @media (max-width: 1600px) {
+    font-size: 2.25rem;
+  }
+  @media (max-width: 1200px) {
+    font-size: 2rem;
+  }
+  @media (max-width: 768px) {
+    font-size: 1.75rem;
+  }
+  @media (max-width: 600px) {
+    font-size: 1.5rem;
+    margin: 40px auto;
+  }
+}
+.work-title:before {
+  content: "";
+  position: absolute;
+  width: 50%;
+  bottom: -2px;
+  height: 3px;
+  background-color: var(--purple-color);
+  @media (max-width: 450px) {
+    height: 2px;
+  }
+}
+
+.react-work {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+.react-apps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  align-items: start;
+  padding-bottom: 50px;
+  gap: 3rem;
+  @media (max-width: 1100px) {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+.react-work .react-title {
+  width: fit-content;
+  margin: 25px auto;
+  font-size: 2rem;
+  font-weight: bold;
+  position: relative;
+  transition: var(--transition-port);
+  @media (max-width: 1600px) {
+    font-size: 1.75rem;
+  }
+  @media (max-width: 1200px) {
+    font-size: 1.5rem;
+  }
+  @media (max-width: 993px) {
+    font-size: 1.25rem;
+  }
+  @media (max-width: 768px) {
+    font-size: 1.125rem;
+  }
+  @media (max-width: 450px) {
+    font-size: 1rem;
+  }
+  & .react-animation {
+    display: inline-block;
+    color: var(--main-color);
+    margin-right: 20px;
+    text-shadow: 0 0 10px rgba(97, 218, 251, 0.5);
+    position: relative;
+    & .orbit-circle {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      top: 50%;
+      left: calc(50% - 10px);
+    }
+  }
+}
+
+.portfolio .games-section {
+  width: calc(100% + 200px);
+  height: 900px;
+  max-height: 1000px;
+  left: -100px;
+  position: relative;
+  margin: 100px auto 60px;
+  background: linear-gradient(
+    135deg,
+    #2c3e50,
+    var(--purple-neon)
+  ); /* Dark Blue Gradient */
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.3);
+  @media (max-width: 1600px) {
+    width: calc(100% + 120px);
+    left: -60px;
+  }
+  @media (max-width: 1200px) {
+    height: 600px;
+  }
+  @media (max-width: 768px) {
+    height: 500px;
+    width: calc(100% + 60px);
+    left: -30px;
+  }
+
+  & .games-container {
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+
+    & .game-container {
+      flex: 0 0 100%;
+    }
+  }
+
+  & .arr {
+    position: absolute;
+    width: 30px;
+    height: 80px;
+    color: #1a1a1a;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 12px;
+    transition: var(--transition-port);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    top: calc(50% - 40px);
+    z-index: 9;
+    cursor: pointer;
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.5);
+      color: #fff;
+      transform: scale(1.1);
+    }
+    &:active {
+      transform: scale(0.9);
+    }
+    &.left {
+      left: 40px;
+      @media (max-width: 768px) {
+        left: 10px;
+      }
+    }
+    &.right {
+      right: calc(40px + var(--scrollbar-width));
+      @media (max-width: 768px) {
+        right: calc(10px + var(--scrollbar-width));
+      }
+    }
+    @media (max-width: 1200px) {
+      width: 20px;
+      height: 60px;
+    }
+    @media (max-width: 768px) {
+      width: 10px;
+      height: 40px;
+    }
+  }
+}
+
+/* Overlay */
+.start-game {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.8),
+    rgba(50, 50, 50, 0.5)
+  );
+  left: 0;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+
+  & h1 {
+    font-size: 2.25rem;
+    letter-spacing: 5px;
+    color: #fff;
+    margin-bottom: 30px;
+    @media (max-width: 1600px) {
+      font-size: 2rem;
+    }
+    @media (max-width: 1200px) {
+      font-size: 1.75rem;
+    }
+    @media (max-width: 993px) {
+      font-size: 1.5rem;
+    }
+    @media (max-width: 768px) {
+      font-size: 1.25rem;
+      letter-spacing: 4px;
+    }
+    @media (max-width: 450px) {
+      font-size: 1rem;
+      letter-spacing: 2px;
+    }
+  }
+}
+
+& .play,
+& .quit-games-btn {
+  background-color: var(--purple-color);
+  color: #fff;
+  font-weight: bold;
+  font-size: 2rem;
+  padding: 10px 30px;
+  border-radius: 12px;
+  letter-spacing: 5px;
+  cursor: pointer;
+  position: relative;
+  transition: var(--transition-port);
+  box-shadow: 0px 0px 20px var(--purple-color); /* Vibrant glow for the button */
+  z-index: 9;
+  overflow: hidden;
+  @media (max-width: 1600px) {
+    font-size: 1.75rem;
+  }
+  @media (max-width: 1200px) {
+    font-size: 1.5rem;
+    padding: 8px 25px;
+  }
+  @media (max-width: 993px) {
+    font-size: 1.25rem;
+    padding: 6px 20px;
+  }
+  @media (max-width: 768px) {
+    font-size: 1rem;
+    letter-spacing: 4px;
+    padding: 4px 15px;
+  }
+  @media (max-width: 450px) {
+    font-size: 0.9375rem;
+    letter-spacing: 2px;
+  }
+  &:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 60%;
+    bottom: 0;
+    right: -50px;
+    background-color: rgba(255, 255, 255, 0.2);
+    transition: var(--transition-port);
+    z-index: -1;
+    transform: rotate(90deg) skewY(-70deg);
+  }
+  &:hover {
+    color: var(--purple-color);
+    background-color: #fff;
+    box-shadow: 0px 0px 25px var(--purple-color);
+  }
+  &:hover:before {
+    transform: skewY(0) rotate(0);
+    height: 100%;
+  }
+  & .gamepad {
+    margin-right: 10px;
+    transition: var(--transition-port);
+  }
+  &:hover .gamepad {
+    transform: scale(1.1);
+  }
+}
+.games-section .quit-games-btn {
+  position: absolute;
+  left: 50%;
+  top: 0px;
+  transform: translate(-50%, -100%);
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+}
+
+.projects-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2%;
+  position: relative;
+  justify-content: space-between;
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+}
