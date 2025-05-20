@@ -3,15 +3,12 @@ import "./skills.css";
 import {
   MainTitle,
   ParaSection,
-  SectionEnd,
   faFlask,
   faLayerGroup,
   faCodeMerge,
-  faPaintRoller,
   FontAwesomeIcon,
   AnimatedSection,
 } from "../Imports/ImportCenter";
-import skillImage from "../images/Contact/contact0.jpg";
 import Object from "./Object/Object";
 import Bar from "./Bar/Bar";
 //Skills Data
@@ -19,7 +16,6 @@ import { items } from "./Skills-Data";
 
 const nextToLearn = [
   { name: "Jest", icon: faFlask, color: "#99425b" },
-  { name: "Tailwind", icon: faPaintRoller, color: "#38bdf8" },
   { name: "Redux", icon: faCodeMerge, color: "#764abc" },
   { name: "Next.js", icon: faLayerGroup, color: "#000" },
 ];
@@ -28,7 +24,7 @@ const nextToMaster = [
   "Performance Optimization",
   "WebAssembly",
   "Mastering Js",
-  "Css - 3D objects",
+  "3D objects & Canvas",
 ];
 
 export default function Skills() {
@@ -47,8 +43,8 @@ export default function Skills() {
 
   const calculateElementWidth = useCallback(() => {
     return containerWidthRef.current
-      ? containerWidthRef.current / 8
-      : window.innerWidth / 8;
+      ? containerWidthRef.current / 9
+      : window.innerWidth / 9;
   }, []);
 
   const initializePositions = useCallback(() => {
@@ -325,15 +321,6 @@ export default function Skills() {
           </AnimatedSection>
         </div>
       </div>
-      <AnimatedSection delay={0.3}>
-        <SectionEnd
-          quote={"From Idea to Implementation: My Work in Action."}
-          name={"– MoSayed"}
-          backgroundImage={skillImage}
-        />
-        <ParaSection para="Continuous learning is the key to mastery in my craft."></ParaSection>
-        <ParaSection para="The best developers are perpetual students of their art."></ParaSection>
-      </AnimatedSection>
     </section>
   );
 }

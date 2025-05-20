@@ -1,5 +1,5 @@
 import Lottie from "lottie-react";
-import fireworksAnimation from "../images/Animations/fireworks.json";
+import fireworksAnimation from "../assets/images/fireworks.json";
 
 export default function Fireworks() {
   return (

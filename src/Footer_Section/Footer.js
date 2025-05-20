@@ -13,7 +13,7 @@ import {
 export default function Footer() {
   return (
     <footer className="footer">
-      <Overlay gradient="#0e0e0e" />
+      <Overlay gradient="linear-gradient(to top, #0a0612 0%, #1a1029 100%)" />
       <div className="footer-container">
         <div className="footer-section about">
           <h3>About Me</h3>

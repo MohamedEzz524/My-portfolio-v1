@@ -2,19 +2,11 @@ import { useState, useEffect } from "react";
 import "./header.css";
 import { Link, Events } from "react-scroll";
 
-export default function Header() {
-  const [isSmall, setIsSmall] = useState(false);
+export default function Header({ isSmall }) {
   const [active, setActive] = useState("home");
   const [showMenu, setShowMenu] = useState(false);
 
   useEffect(() => {
-    const handleResize = () => {
-      setIsSmall(window.innerWidth <= 992); // Example breakpoint for mobile
-    };
-
-    handleResize(); // Check initially
-    window.addEventListener("resize", handleResize);
-
     // Initialize scroll events
     Events.scrollEvent.register("begin", () => {
       // Optional: handle scroll start
@@ -27,7 +19,6 @@ export default function Header() {
     return () => {
       Events.scrollEvent.remove("begin");
       Events.scrollEvent.remove("end");
-      window.removeEventListener("resize", handleResize);
     };
   }, []);
 
@@ -73,7 +64,7 @@ export default function Header() {
       {!isSmall ? (
         <>
           <ul className="nav-links">
-            {["home", "about", "skills", "portfolio", "contact"].map((item) => (
+            {["home", "about", "skills"].map((item) => (
               <li key={item}>
                 <Link
                   to={item}
@@ -89,7 +80,29 @@ export default function Header() {
                 </Link>
               </li>
             ))}
-
+            <li className="me">
+              <div className="up">
+                <span>Eng.</span>Mohamed ElSayed
+              </div>
+              <div className="down">Computer Engineer</div>
+            </li>
+            {["portfolio", "contact"].map((item) => (
+              <li key={item}>
+                <Link
+                  key={item}
+                  to={item}
+                  smooth={true}
+                  duration={500}
+                  offset={-80}
+                  spy={true}
+                  onSetActive={handleSetActive}
+                  className={`li ${active === item ? "active" : ""}`}
+                  isDynamic={true}
+                >
+                  {item.charAt(0).toUpperCase() + item.slice(1)}
+                </Link>
+              </li>
+            ))}
             <li>
               <a
                 className="hire"

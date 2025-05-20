@@ -1,0 +1,38 @@
+:root {
+  --font-logo: "Poppins", sans-serif;
+  --font-name: "Playfair Display", serif;
+  --outfit-font: "outfit", serif;
+  --orbitron-font: "orbitron", serif;
+}
+
+/* Logo: <MoSayed/> */
+.logo-text {
+  font-family: var(--font-logo);
+  font-weight: 800;
+  font-style: italic;
+  letter-spacing: -0.5px;
+}
+
+/* Your Name: "Mohamed ElSayed" */
+.name-text {
+  font-family: var(--font-name);
+  font-weight: 500;
+  font-style: italic;
+  letter-spacing: 0.5px;
+}
+
+/* orbitron Bold */
+.outfit-font {
+  font-family: var(--outfit-font);
+  font-weight: 600;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* orbitron Bold */
+.outfit-font {
+  font-family: var(--orbitron-font);
+  font-weight: 400;
+  line-height: 1.6;
+  color: #333;
+}

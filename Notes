@@ -1,0 +1,66 @@
+/* 
+npm install normalize.css 
+npm install react-scroll {Link}
+npm install react-router-dom {Router}
+npm install lottie-react
+ 
+
+*/
+
+/* 
+font: 
+1-download
+2-convert fonts into woff
+3-wrap into folder font
+4-link the style-sheet at html head
+5-use font-family
+*/
+/* 
+font-awesome
+1-npm i --save @fortawesome/fontawesome-svg-core   
+
+2-
+npm i --save @fortawesome/free-solid-svg-icons    
+>> npm i --save @fortawesome/free-regular-svg-icons
+>> npm i --save @fortawesome/free-brands-svg-icons
+
+3-npm i --save @fortawesome/react-fontawesome@latest
+
+4-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"; //local FontAwesome library
+
+5-
+import { faDownload } from "@fortawesome/free-solid-svg-icons"; //icon
+
+6-
+<FontAwesomeIcon className="ic" icon={faDownload} size="sm" />
+
+*/
+
+//href="mailto:moelsayed524@gmail.com?subject=Contact"
+
+/*
+naviagation with React Router
+1- in different pages use Navbar tag
+2- if single page like iam using use Link 
+
+
+*/
+/*
+1-npm install lottie-react
+2-download animation folder json
+3-import fireworksAnimation from "../images/Animations/fireworks.json";
+4-<Lottie animationData={fireworksAnimation} loop={true} />
+*/
+----------------------------------------
+Third Party for form
+https://formspree.io/forms/mvgkwwre/integration
+1-npm npm install @formspree/react
+2-import { useForm } from "@formspree/react";
+3-const [state, handleSubmit] = useForm("mvgkwwre");
+4-<form onSubmit(e=> handleSubmit(e))> 
+5-
+<input name="name"/>
+<input name="email"/>
+<input name="subject"/>
+

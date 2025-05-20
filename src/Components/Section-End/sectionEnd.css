@@ -2,13 +2,14 @@
   position: relative;
   color: #fff;
   text-align: center;
-  font-size: 28px;
+  font-size: 1.1rem;
+  font-size: clamp(0.9rem, 1.2vw + 0.4rem, 1.25rem);
   align-content: center;
   margin-top: 50px;
-  width: calc(100% + 200px);
-  padding: 25px 100px;
+  width: calc(100% + 120px);
+  padding: 25px 60px;
   height: 300px;
-  left: -100px;
+  left: -60px;
   background-position: 50%;
   background-size: cover;
   background-attachment: fixed;
@@ -26,7 +27,7 @@
     z-index: -5;
   }
   & span {
-    color: var(--main-color);
+    color: var(--purple-neon);
   }
 }
 
@@ -37,41 +38,27 @@
 
 @media (max-width: 1600px) {
   .about-img {
-    width: calc(100% + 120px);
-    padding: 25px 60px;
+    width: calc(100% + 60px);
+    padding: 15px 30px;
     height: 250px;
-    font-size: 24px;
-    left: -60px;
+    left: -30px;
   }
 }
 @media (max-width: 1200px) {
   .about-img {
     height: 200px;
-    font-size: 22px;
   }
 }
-@media (min-width: 768px) and (max-width: 992px) {
-  .about-img {
-    font-size: 20px;
-  }
-}
+
 @media (max-width: 768px) {
   .about-img {
-    width: calc(100% + 60px);
-    padding: 15px 30px;
-    font-size: 18px;
-    left: -30px;
+    width: 100%;
+    left: 0;
   }
 }
-@media (max-width: 600px) {
-  .about-img {
-    font-size: 16px;
-  }
-}
+
 @media (max-width: 450px) {
   .about-img {
-    padding: 10px 30px;
-    font-size: 14px;
     line-height: 1.8;
   }
 }

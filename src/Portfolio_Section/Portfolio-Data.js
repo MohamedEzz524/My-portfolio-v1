@@ -9,7 +9,17 @@ import {
   temp4Small,
   temp5Large,
   temp5Small,
-} from "../images/React-work/ReactApps.js";
+  temp6Large,
+  temp6Small,
+  temp7Large,
+  temp7Small,
+  temp8Large,
+  temp8Small,
+  temp9Large,
+  temp9Small,
+  gptLarge,
+  gptSmall,
+} from "../assets/images/ReactApps.js";
 import {
   todo,
   todo2,
@@ -29,7 +39,7 @@ import {
   domainName2,
   paintApp,
   paintApp2,
-} from "../images/React-work/ReactApps.js";
+} from "../assets/images/ReactApps.js";
 
 const reactApps = [
   {
@@ -133,52 +143,42 @@ const reactApps = [
 const temps = [
   {
     id: 1,
-    name: "First-Template",
-    large: temp1Large,
-    small: temp1Small,
-    href: "https://mohamedezz524.github.io/First-project/",
-    hrefGit: "https://github.com/MohamedEzz524/First-project",
-    type: "HTML&CSS",
-    colors: "#FF6E00, #3C6FDD",
+    name: "Fifth-Template",
+    large: temp6Large,
+    small: temp6Small,
+    href: "https://mohamedezz524.github.io/ZRevo-temp/",
+    hrefGit: "https://github.com/MohamedEzz524/Fifth-project",
+    type: "Portfolio Template",
+    colors: "#9B5DE5",
     description:
-      "My first template after learning HTML & CSS. A simple, static layout to practice structure and styling basics.",
-    designSkills: [
-      { name: "HTML", value: "60%" },
-      { name: "CSS", value: "50%" },
-    ],
+      "Modern portfolio template  featuring reusable components, easy content management, and seamless customization. strong UI/UX, responsive and optimized for performance. Includes a fully functional contact form powered by Formspree. ",
+    designSkills: ["React", "Tailwind", "Observer", "Components"],
   },
   {
     id: 2,
-    name: "Second-Template",
-    hrefGit: "https://github.com/MohamedEzz524/Second-project",
-    large: temp2Large,
-    small: temp2Small,
-    href: "https://mohamedezz524.github.io/Second-project/",
-    type: "HTML&CSS",
+    name: "Bakeora Shop",
+    large: temp8Large,
+    small: temp8Small,
+    href: "https://mohamedezz524.github.io/Bakeora",
+    hrefGit: "https://github.com/MohamedEzz524/Bakeora-code",
+    type: "Bakeora Shop",
     colors: "#FF6E00, #3C6FDD",
     description:
-      "Improved styling and layout using deeper CSS knowledge. Focused on cleaner design and better visual hierarchy",
-    designSkills: [
-      { name: "HTML", value: "75%" },
-      { name: "CSS", value: "70%" },
-    ],
+      "Bakeora is a modern bakery website built with React and Tailwind CSS, featuring reusable components, nested routing, product and blog pages, search-based navigation, and a responsive UI designed for seamless user experience.",
+    designSkills: ["React-Router", "Tailwind", "Search navigation", "Motion"],
   },
   {
     id: 3,
-    hrefGit: "https://github.com/MohamedEzz524/Third-project",
-    name: "Third-Template",
-    large: temp3Large,
-    small: temp3Small,
-    href: "https://mohamedezz524.github.io/Third-project/",
-    type: "HTML&CSS&JS",
-    colors: "#FF6E00,#3C6FDD,#F4D03F",
+    name: "Fifth-Template",
+    large: temp7Large,
+    small: temp7Small,
+    href: "https://mohamedezz524.github.io/My-portfolio/",
+    hrefGit: "https://github.com/MohamedEzz524/My-portfolio-code",
+    type: "Portfolio v2",
+    colors: "#9B5DE5",
     description:
-      "My first interactive site using JavaScript. Simple DOM manipulation, good for early logic and scripting practice.",
-    designSkills: [
-      { name: "HTML", value: "80%" },
-      { name: "CSS", value: "70%" },
-      { name: "JavaScript", value: "50%" },
-    ],
+      "Using Tailwind CSS, improving UI architecture for scalability and maintainability supporting themes. Enhanced performance and user experience with optimized rendering and smoother interactions",
+    designSkills: ["React", "Tailwind"],
   },
   {
     id: 4,
@@ -187,32 +187,91 @@ const temps = [
     large: temp4Large,
     small: temp4Small,
     href: "https://mohamedezz524.github.io/Fourth-project/",
-    type: "HTML&CSS&JS",
+    type: "Special Design",
     colors: "#FF6E00,#3C6FDD ,#F4D03F",
     description:
-      "Built with JavaScript, and responsive design. Focused on motion, interaction, and better UX.",
-    designSkills: [
-      { name: "HTML", value: "85%" },
-      { name: "CSS", value: "80%" },
-      { name: "JavaScript", value: "70%" },
-    ],
+      "A JavaScript-focused project to practice interactivity, responsive design, and user experience enhancements, including animations, theme switching, and Intersection Observer for dynamic effects.",
+    designSkills: ["HTML", "CSS", "JavaScript", "Observer", "Themes"],
   },
   {
     id: 5,
+    hrefGit: "https://github.com/MohamedEzz524/Third-project",
+    name: "Third-Template",
+    large: temp3Large,
+    small: temp3Small,
+    href: "https://mohamedezz524.github.io/Third-project/",
+    type: "ElZero Training",
+    colors: "#FF6E00,#3C6FDD,#F4D03F",
+    description:
+      "A simple interactive website built with JavaScript to practice core scripting, DOM manipulation, and basic user interaction. ",
+    designSkills: ["HTML", "CSS", "JavaScript"],
+  },
+
+  {
+    id: 6,
     name: "Fifth-Template",
     large: temp5Large,
     small: temp5Small,
-    href: "https://mohamedezz524.github.io/Fifth-project/",
-    hrefGit: "https://github.com/MohamedEzz524/Fifth-project",
-    type: "BootStrap",
+    href: "https://mohamedezz524.github.io/Six_project/",
+    hrefGit: "https://github.com/MohamedEzz524/Six_project",
+    type: "Bandi Template",
     colors: "#9B5DE5",
     description:
       "A clean layout made with Bootstrap. Explored utility classes and responsiveness with minimal custom ",
-    designSkills: [
-      { name: "HTML", value: "90%" },
-      { name: "CSS", value: "70%" },
-      { name: "Bootstrap", value: "60%" },
-    ],
+    designSkills: ["HTML5", "Bootstrap"],
+  },
+  {
+    id: 7,
+    name: "Fifth-Template",
+    large: temp9Large,
+    small: temp9Small,
+    href: "https://mohamedezz524.github.io/Fifth-project/",
+    hrefGit: "https://github.com/MohamedEzz524/Fifth-project",
+    type: "DevFolio Template",
+    colors: "#9B5DE5",
+    description:
+      "A practice portfolio website built with Bootstrap to explore responsive layouts, reusable components, and rapid UI development. Designed to strengthen my skills in front-end structure and styling",
+    designSkills: ["HTML5", "Bootstrap", "Responsive Design"],
+  },
+  {
+    id: 8,
+    name: "GPT-Template",
+    hrefGit: "https://github.com/MohamedEzz524/GPT-3",
+    large: gptLarge,
+    small: gptSmall,
+    href: "https://mohamedezz524.github.io/GPT-3",
+    type: "GPT-3",
+    colors: "#FF6E00, #3C6FDD",
+    description:
+      "A responsive landing page inspired by GPT-3, built with semantic HTML and modern CSS to practice layout design and front-end structure.",
+    designSkills: ["HTML5", "CSS3", "Responsive Design"],
+  },
+
+  {
+    id: 9,
+    name: "Second-Template",
+    hrefGit: "https://github.com/MohamedEzz524/Second-project",
+    large: temp2Large,
+    small: temp2Small,
+    href: "https://mohamedezz524.github.io/Second-project/",
+    type: "Kasper Template",
+    colors: "#FF6E00, #3C6FDD",
+    description:
+      "Advanced With Styling and Layout by deeper in Css, Focused on cleaner design and better visual hierarchy",
+    designSkills: ["HTML5", "CSS3", "Responsive Design"],
+  },
+  {
+    id: 10,
+    name: "First-Template",
+    large: temp1Large,
+    small: temp1Small,
+    href: "https://mohamedezz524.github.io/First-project/",
+    hrefGit: "https://github.com/MohamedEzz524/First-project",
+    type: "Leonagency Template",
+    colors: "#FF6E00, #3C6FDD",
+    description:
+      "My first website after learning web development fundamentals. A simple, responsive static layout built to practice structure, semantic HTML, and core CSS styling.",
+    designSkills: ["HTML5", "CSS3", "Responsive Design"],
   },
 ];
 

@@ -31,7 +31,7 @@ export default function Temp({
         <div className="design-level">
           {designSkills.map((skill, index) => (
             <span className="level" key={index}>
-              {`${skill.name} - ${skill.value}`}
+              {skill}
             </span>
           ))}
         </div>

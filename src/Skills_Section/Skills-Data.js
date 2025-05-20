@@ -1,12 +1,13 @@
-import htmlLogo from "../images/objects/HTML.png";
-import cssLogo from "../images/objects/CSS.png";
-import jsLogo from "../images/objects/javaScript.png";
-import reactLogo from "../images/objects/REACT.png";
-import bsLogo from "../images/objects/BS.png";
-import tsLogo from "../images/objects/Typescript.png";
-import sassLogo from "../images/objects/SASS.png";
-import gitLogo from "../images/objects/Github.png";
-import pugLogo from "../images/objects/pug.png";
+import htmlLogo from "../assets/images/HTML.png";
+import cssLogo from "../assets/images/CSS.png";
+import jsLogo from "../assets/images/javaScript.png";
+import reactLogo from "../assets/images/REACT.png";
+import bsLogo from "../assets/images/BS.png";
+import tsLogo from "../assets/images/Typescript.png";
+import sassLogo from "../assets/images/SASS.png";
+import gitLogo from "../assets/images/Github.png";
+import pugLogo from "../assets/images/pug.png";
+import tailwindLogo from "../assets/images/Tailwind.png";
 import {
   faHtml5,
   faCss3,
@@ -17,6 +18,7 @@ import {
   faSass,
   faReact,
   faBootstrap,
+  faWind,
 } from "../Imports/ImportCenter";
 
 const items = [
@@ -76,11 +78,22 @@ const items = [
     percentageBg: "#3c6fdd",
   },
   {
+    src: tailwindLogo,
+    name: "Tailwind",
+    icon: faWind,
+    color: "#0ff",
+    id: 6,
+    percentage: "95%",
+    linearGrad: "linear-gradient(145deg, #0ff, #fff)",
+    percentageColor: "#0ff",
+    percentageBg: "#3c6fdd",
+  },
+  {
     src: tsLogo,
     name: "TS",
     icon: faT,
     color: "#197ABF",
-    id: 6,
+    id: 7,
     percentage: "83%",
     linearGrad: "linear-gradient(145deg, #197ABF, #1A65A4)",
     percentageColor: "#1a65a4",
@@ -91,7 +104,7 @@ const items = [
     name: "SASS",
     icon: faSass,
     color: "#D06397",
-    id: 7,
+    id: 8,
     percentage: "88%",
     linearGrad: "linear-gradient(145deg, #D06397, #FF6B8A)",
     percentageColor: "#ff6b8a",
@@ -102,7 +115,7 @@ const items = [
     icon: faGithub,
     name: "GitHub",
     color: "#fff",
-    id: 8,
+    id: 9,
     percentage: "75%",
     linearGrad: "linear-gradient(145deg, #3D3D3D, #6A6A6A)",
     percentageColor: "#999",
@@ -113,7 +126,7 @@ const items = [
     name: "Pug",
     icon: faP,
     color: "#5C3B32",
-    id: 9,
+    id: 10,
     percentage: "85%",
     linearGrad: "linear-gradient(145deg, #5C3B32, #8D5D4C)",
     percentageColor: "#8d5d4c",

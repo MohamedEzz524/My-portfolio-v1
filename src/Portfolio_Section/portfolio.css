@@ -3,20 +3,19 @@
 }
 
 .work {
-  /* background: #202020; */
-  background: #1a1a1a;
+  background: rgba(26, 16, 41, 0.8);
+  border: 1px solid #2e1b4e;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   -webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(5px);
   border-radius: 12px;
-  border: 1px solid rgba(30, 30, 30, 0.4);
   padding: 40px;
   transition: var(--transition-port);
   @media (max-width: 993px) {
     padding: 20px;
   }
   @media (max-width: 600px) {
-    padding: 0px 0;
+    padding: 10px;
     background: transparent;
     border: none;
     -webkit-backdrop-filter: none;
@@ -26,7 +25,7 @@
 .work-title {
   position: relative;
   width: fit-content;
-  margin: 20px 0;
+  margin: 30px 0;
   font-size: 2.5rem;
   color: #f5f5f5;
   font-weight: bold;
@@ -62,14 +61,15 @@
   gap: 50px;
 }
 .react-apps-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-  align-items: start;
+  columns: 3;
+  column-gap: 3rem;
   padding-bottom: 50px;
-  gap: 3rem;
-  @media (max-width: 1100px) {
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 1.5rem;
+  @media (max-width: 1280px) {
+    columns: 2;
+  }
+  @media (max-width: 640px) {
+    columns: 1;
+    column-gap: 0;
   }
 }
 
@@ -114,8 +114,8 @@
 
 .portfolio .games-section {
   width: calc(100% + 200px);
-  height: 900px;
-  max-height: 1000px;
+  height: 600px;
+  max-height: 700px;
   left: -100px;
   position: relative;
   margin: 100px auto 60px;
@@ -132,10 +132,8 @@
   @media (max-width: 1200px) {
     height: 600px;
   }
-  @media (max-width: 768px) {
-    height: 500px;
-    width: calc(100% + 60px);
-    left: -30px;
+  @media (max-width: 993px) {
+    display: none;
   }
 
   & .games-container {
@@ -150,10 +148,10 @@
 
   & .arr {
     position: absolute;
-    width: 30px;
-    height: 80px;
-    color: #1a1a1a;
-    background-color: rgba(255, 255, 255, 0.5);
+    width: 20px;
+    height: 40px;
+    color: #e2d1ff;
+    background-color: rgba(255, 255, 255, 0.3);
     border-radius: 12px;
     transition: var(--transition-port);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -170,9 +168,6 @@
     }
     &.left {
       left: 40px;
-      @media (max-width: 768px) {
-        left: 10px;
-      }
     }
     &.right {
       right: calc(40px + var(--scrollbar-width));
@@ -184,128 +179,7 @@
       width: 20px;
       height: 60px;
     }
-    @media (max-width: 768px) {
-      width: 10px;
-      height: 40px;
-    }
   }
-}
-
-/* Overlay */
-.start-game {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    135deg,
-    rgba(0, 0, 0, 0.8),
-    rgba(50, 50, 50, 0.5)
-  );
-  left: 0;
-  top: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  z-index: 5;
-
-  & h1 {
-    font-size: 2.25rem;
-    letter-spacing: 5px;
-    color: #fff;
-    margin-bottom: 30px;
-    @media (max-width: 1600px) {
-      font-size: 2rem;
-    }
-    @media (max-width: 1200px) {
-      font-size: 1.75rem;
-    }
-    @media (max-width: 993px) {
-      font-size: 1.5rem;
-    }
-    @media (max-width: 768px) {
-      font-size: 1.25rem;
-      letter-spacing: 4px;
-    }
-    @media (max-width: 450px) {
-      font-size: 1rem;
-      letter-spacing: 2px;
-    }
-  }
-}
-
-& .play,
-& .quit-games-btn {
-  background-color: var(--purple-color);
-  color: #fff;
-  font-weight: bold;
-  font-size: 2rem;
-  padding: 10px 30px;
-  border-radius: 12px;
-  letter-spacing: 5px;
-  cursor: pointer;
-  position: relative;
-  transition: var(--transition-port);
-  box-shadow: 0px 0px 20px var(--purple-color); /* Vibrant glow for the button */
-  z-index: 9;
-  overflow: hidden;
-  @media (max-width: 1600px) {
-    font-size: 1.75rem;
-  }
-  @media (max-width: 1200px) {
-    font-size: 1.5rem;
-    padding: 8px 25px;
-  }
-  @media (max-width: 993px) {
-    font-size: 1.25rem;
-    padding: 6px 20px;
-  }
-  @media (max-width: 768px) {
-    font-size: 1rem;
-    letter-spacing: 4px;
-    padding: 4px 15px;
-  }
-  @media (max-width: 450px) {
-    font-size: 0.9375rem;
-    letter-spacing: 2px;
-  }
-  &:before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 60%;
-    bottom: 0;
-    right: -50px;
-    background-color: rgba(255, 255, 255, 0.2);
-    transition: var(--transition-port);
-    z-index: -1;
-    transform: rotate(90deg) skewY(-70deg);
-  }
-  &:hover {
-    color: var(--purple-color);
-    background-color: #fff;
-    box-shadow: 0px 0px 25px var(--purple-color);
-  }
-  &:hover:before {
-    transform: skewY(0) rotate(0);
-    height: 100%;
-  }
-  & .gamepad {
-    margin-right: 10px;
-    transition: var(--transition-port);
-  }
-  &:hover .gamepad {
-    transform: scale(1.1);
-  }
-}
-.games-section .quit-games-btn {
-  position: absolute;
-  left: 50%;
-  top: 0px;
-  transform: translate(-50%, -100%);
-  border-radius: 4px;
-  border: none;
-  cursor: pointer;
 }
 
 .projects-container {
@@ -317,5 +191,62 @@
   justify-content: space-between;
   @media (max-width: 768px) {
     flex-direction: column;
+  }
+}
+
+.note-section {
+  & .note-portfolio {
+    font-size: clamp(0.75rem, 0.8vw + 0.2rem, 1.125rem);
+    background: rgba(26, 16, 41, 0.5);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #3a2258;
+    &:hover p {
+      color: #f5f5f5;
+    }
+    & .highlight {
+      color: #c084fc;
+      font-weight: 600;
+      font-size: 1rem;
+    }
+    & p {
+      color: #e2d1ff;
+      display: inline-block;
+    }
+  }
+  & .more-links {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(8px, 0.8vw + 0.2rem, 15px);
+
+    & a {
+      font-size: clamp(0.9rem, 1vw + 0.4rem, 1.25rem);
+      width: fit-content;
+      color: #d9b8ff;
+      background: rgba(46, 27, 78, 0.2);
+      border-radius: 8px;
+      border: 1px solid #2e1b4e;
+      box-shadow: 0 0 10px rgba(46, 27, 78, 0.5);
+      padding: 0.6rem 1.2rem;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      cursor: pointer;
+      transition: var(--transition-port);
+      & span {
+        transition: var(--transition-port);
+      }
+      &:hover {
+        background: rgba(46, 27, 78, 1);
+        color: #e2d1ff;
+        text-underline-offset: 5px;
+        & span {
+          transform: translateX(5px);
+        }
+      }
+    }
   }
 }

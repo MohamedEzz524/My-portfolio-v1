@@ -18,7 +18,6 @@ import IconLink from "../Components/Icon-Link/IconLink";
 import { useForm } from "@formspree/react";
 import Stars from "../Components/Stars/StarsRate";
 import InputType from "../Components/InputType/InputType";
-import Emojis from "../Components/Emojis/Emojis";
 //footer
 import Footer from "../Footer_Section/Footer";
 
@@ -52,7 +51,7 @@ export default function Contact() {
           {/* send message form */}
           <div className="contact-input">
             <form className="contact-form" onSubmit={(e) => handleSubmit(e)}>
-              <p className="send-message">Send Message / Feedback</p>
+              <p className="send-message">Send Message</p>
               <InputType
                 type="text"
                 placeholder="Your Name"
@@ -152,9 +151,6 @@ export default function Contact() {
             thoughts, or any notes with me—they mean thing for me! and i'm ready
             to discuss anything u would like to Thank you for being a part of my
             journey, and for contributing to something greater together.
-            <div className="emojis-container">
-              <Emojis />
-            </div>
           </div>
           <div className="rate">
             <p className="rate-title">Rate Me</p>

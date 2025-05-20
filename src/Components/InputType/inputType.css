@@ -25,7 +25,6 @@
     font-size: 0.8125rem;
   }
   @media (max-width: 450px) {
-    border-width: 3px;
     font-size: 0.75rem;
     padding: 12px 10px;
   }
@@ -46,8 +45,6 @@
     background-color: rgba(0, 0, 0, 0.6);
     border-bottom-color: #ff3e3e; /* Bold red underline */
     box-shadow: 0px 2px 4px rgba(255, 62, 62, 0.5); /* Subtle red glow */
-    /* border-color: #ff3e3e;
-      box-shadow: 0px 0px 5px rgba(255, 62, 62, 0.7); */
     outline: none;
   }
 

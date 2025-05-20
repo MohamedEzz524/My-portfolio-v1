@@ -1,13 +1,13 @@
 import "./memoryGame.css";
 import { useEffect, useState } from "react";
-import reactImg from "../images/objects/REACT.png";
-import htmlImg from "../images/objects/HTML.png";
-import cssImg from "../images/objects/CSS.png";
-import tsImg from "../images/objects/Typescript.png";
-import pugImg from "../images/objects/pug.png";
-import bsImg from "../images/objects/BS.png";
-import sassImg from "../images/objects/SASS.png";
-import githubImg from "../images/objects/Github.png";
+import reactImg from "../assets/images/REACT.png";
+import htmlImg from "../assets/images/HTML.png";
+import cssImg from "../assets/images/CSS.png";
+import tsImg from "../assets/images/Typescript.png";
+import pugImg from "../assets/images/pug.png";
+import bsImg from "../assets/images/BS.png";
+import sassImg from "../assets/images/SASS.png";
+import githubImg from "../assets/images/Github.png";
 import Fireworks from "../Animations/Fireworks";
 
 const initialDataMemory = [
@@ -107,7 +107,7 @@ export default function MemoryGame({ name }) {
     setTries(0);
     setFlippedBlocks([]);
     setMatchedBlocks([]);
-    setShow(false); // assuming this is for the result animation
+    setShow(false); //  for the result animation
     setResult({ text: "", color: "" });
     const shuffledData = shuffleArray(initialDataMemory);
     setDataMemory(shuffledData);

@@ -1,0 +1,34 @@
+/* Poppins (Logo: <MoSayed/>) */
+@font-face {
+  font-family: "Poppins";
+  src: url("../Fonts/Poppins/Poppins-ExtraBoldItalic.ttf") format("truetype");
+  font-weight: 800;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Playfair Display (Your Name) */
+@font-face {
+  font-family: "Playfair Display";
+  src: url("../Fonts/PlayfairDisplay/PlayfairDisplay-MediumItalic.ttf")
+    format("truetype");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "outfit";
+  src: url("../Fonts/Outfit/Outfit-Bold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "orbitron";
+  src: url("../Fonts/Orbitron/Orbitron-Regular.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}

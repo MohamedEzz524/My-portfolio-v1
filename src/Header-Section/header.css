@@ -1,20 +1,24 @@
 nav {
   width: 100%;
-  height: 80px;
+  height: 60px;
   position: fixed;
-  font-family: "Roboto", sans-serif;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 100px;
+  gap: 50px;
+  padding: 0 60px;
   left: 0;
   top: 0;
-  background: linear-gradient(to right, #000000, #2c2c2c);
-  box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
-  border-bottom: 2px solid rgba(0, 255, 255, 0.2);
-  background-size: 400% 400%;
-  animation: gradientShift 20s ease infinite;
-  will-change: background-position;
+  background: linear-gradient(
+    135deg,
+    #0a0612 0%,
+    #2e1b4e 30%,
+    #6a3093 70%,
+    #c084fc 100%
+  );
+  box-shadow: 0 0 25px rgba(192, 132, 252, 0.6),
+    0 0 50px rgba(106, 48, 147, 0.3);
+  border-bottom: 1px solid rgba(192, 132, 252, 0.3);
   z-index: 1000;
   &::before {
     content: "";
@@ -23,7 +27,7 @@ nav {
     left: 10%;
     width: 80%;
     height: 2px;
-    background: linear-gradient(90deg, transparent, #00f7ff, transparent);
+    background: linear-gradient(90deg, transparent, #6a3093, transparent);
     animation: flow 2s linear infinite;
     pointer-events: none;
     @media (max-width: 450px) {
@@ -31,11 +35,10 @@ nav {
     }
   }
   @media (max-width: 1600px) {
-    padding: 0px 60px;
+    padding: 0px 30px;
   }
   @media (max-width: 768px) {
-    padding: 0px 30px;
-    height: 90px;
+    gap: 10px;
   }
 }
 @keyframes gradientShift {
@@ -59,26 +62,32 @@ nav {
 }
 
 nav ul {
-  font-family: "outfit";
+  font-family: var(--outfit-font);
   display: flex;
+  height: 100%;
   align-items: center;
   justify-content: space-between;
   flex: 1;
-  margin-left: 50px;
   @media (min-width: 1920px) {
     justify-content: space-around;
   }
   & li:not(.me) {
     background-color: transparent;
+    display: inline-flex;
+    align-content: center;
     height: 100%;
     & .li {
-      font-size: 1rem;
+      display: inline-block;
+      height: 50%;
+      margin: auto;
+      font-size: clamp(0.75rem, 0.7vw + 0.2rem, 1.125rem);
       font-weight: bold;
-      padding: 12px 16px;
-      color: #eee;
+      padding: 0 15px;
+      align-content: center;
+      color: #ddd;
       letter-spacing: 1px;
       transition: var(--transition-port);
-      border-radius: 7px;
+      border-radius: 5px;
       border: none;
       background-color: transparent;
       cursor: pointer;
@@ -108,7 +117,8 @@ nav ul {
       &.active {
         pointer-events: none;
         color: var(--neon-color);
-        background-color: #1c1c1c;
+        box-shadow: inset 0 0 10px #00ffff;
+        background-color: transparent;
         font-weight: 700;
         &::after {
           width: 100%;
@@ -116,34 +126,29 @@ nav ul {
       }
     }
     & .hire {
-      padding: 10px 30px;
-      font-size: 1.5rem;
+      height: auto;
+      margin: auto;
+      padding: 8px 25px;
+      font-size: clamp(1rem, 0.9vw + 0.3rem, 1.5rem);
       font-weight: bold;
       color: #fff;
-      background: linear-gradient(45deg, #ff4500, #00ffff);
+      background: linear-gradient(45deg, #ff00aa, var(--purple-color), #00f7ff);
       background-size: 400% 400%;
-      box-shadow: 0 0 15px rgba(255, 69, 0, 0.6),
-        0 0 30px rgba(0, 255, 255, 0.6);
+      box-shadow: 0 0 10 0 20px #ff00aa, 0 0 40px #ff0066;
       border-radius: 50px;
       will-change: background-position;
       animation: gradientShift 4s ease infinite;
       transition: var(--transition-port);
-      @media (max-width: 1600px) {
-        font-size: 1.25rem;
-        padding: 10px 25px;
-      }
-      @media (max-width: 1200px) {
-        font-size: 1.125rem;
-        padding: 10px 20px;
-      }
       &:hover,
       &:active {
-        box-shadow: 0 0 25px rgba(255, 69, 0, 0.8),
-          0 0 50px rgba(0, 255, 255, 0.8);
+        box-shadow: 0 0 25px rgba(240, 0, 240, 0.6),
+          0 0 35px rgba(255, 255, 255, 0.8);
       }
     }
   }
   & li.me {
+    align-content: center;
+    text-align: center;
     font-size: 0.875rem;
     font-weight: bold;
     letter-spacing: 1px;
@@ -152,51 +157,44 @@ nav ul {
     @media (max-width: 1600px) {
       font-size: 0.8125rem;
     }
-    @media (max-width: 1250px) {
+    @media (max-width: 990px) {
       display: none;
     }
-    & .name {
+    & .up {
       padding: 5px;
-      & .eng {
+      & span {
+        font-weight: bold;
         color: var(--main-color);
       }
     }
-    & .job {
-      color: #999;
+    & .down {
+      color: #888;
     }
   }
 }
 
-.logo {
-  font-family: "Ruthie", cursive;
+nav .logo {
+  font-family: var(--font-logo);
   background-color: transparent;
-  font-size: 2.2rem;
+  font-size: clamp(0.9rem, 0.9vw + 0.5rem, 1.5rem);
+  line-height: 1.33;
   font-weight: bold;
   height: 100%;
   align-content: center;
-  letter-spacing: 2px;
-  color: #fff;
+  letter-spacing: 0px;
   cursor: pointer;
   padding: 0;
+  & a {
+    color: #fff;
+    text-shadow: 0 0 15px #ff00ff;
+  }
   & .logo-mo {
     color: #00f7ff;
-    text-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 15px #0ff;
+    text-shadow: 0 0 5px #0ff, 0 0 10px #0ff;
+    border-bottom: 2px solid #ff00ff;
   }
   & span.slash {
-    color: var(--slash-color);
-  }
-  @media (max-width: 1600px) {
-    font-size: 2rem;
-  }
-  @media (max-width: 1200px) {
-    font-size: 1.8rem;
-  }
-  @media (max-width: 768px) {
-    font-size: 1.6rem;
-  }
-
-  @media (min-height: 1600px) {
-    height: 4px;
+    color: #ff00ff;
   }
 }
 
@@ -214,21 +212,6 @@ nav ul {
   border: none;
   padding: 1rem;
   cursor: pointer;
-  &::before {
-    content: "";
-    position: absolute;
-    border: 10px solid;
-    border-color: rgba(0, 229, 255, 0.6) transparent transparent transparent;
-    bottom: -20px;
-    left: calc(50% - 10px);
-    opacity: 0;
-    transform: translateY(-10px);
-    transition: var(--transition-port);
-  }
-  &:has(.active):before {
-    opacity: 1;
-    transform: translateY(0px);
-  }
 }
 .dropdown-toggle span {
   display: block;
@@ -239,6 +222,10 @@ nav ul {
   background-color: #f5f5f5;
   border-radius: 5px;
   transition: var(--transition-port);
+  @media (max-width: 450px) {
+    height: 3px;
+    width: 30px;
+  }
 }
 
 .dropdown-toggle:hover span,
@@ -260,16 +247,13 @@ nav ul {
   display: none;
   position: fixed;
   background: #252525;
-  top: 80px;
+  top: 60px;
   left: 0px;
   width: 100vw;
   text-align: left;
   z-index: 100;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(106, 48, 147, 0.3);
   transition: var(--transition-port);
-  @media (max-width: 768px) {
-    top: 90px;
-  }
   & a {
     color: #f5f5f5;
     display: block;
@@ -277,14 +261,12 @@ nav ul {
     padding: 1rem;
     text-decoration: none;
     font-size: 1rem;
-    letter-spacing: 2px;
     border-bottom: 1px solid rgba(245, 245, 245, 0.1);
-
     &:last-of-type {
       border: none;
     }
     &:hover {
-      background: rgba(0, 229, 255, 0.2);
+      background: rgba(192, 132, 252, 0.4);
     }
   }
 }

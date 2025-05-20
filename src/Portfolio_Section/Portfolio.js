@@ -1,99 +1,21 @@
-import { useEffect, useRef, useState } from "react";
 import "./portfolio.css";
 import {
   MainTitle,
   ParaSection,
-  FontAwesomeIcon,
   AnimatedSection,
 } from "../Imports/ImportCenter";
-import { faAngleRight, faAngleLeft, faGamepad } from "../Imports/ImportCenter"; //icon
 import { temps, reactApps } from "./Portfolio-Data";
 import Temp from "./Port-Template/Temp";
 import AppTemp from "./App-Temp/AppTemp";
-import MemoryGame from "../Games/MemoryGame";
-import RockPaperScissors from "../Games/RockPaperScissors";
 
 export default function Portfolio() {
-  const [name, setName] = useState("Unknown");
-  const [gameIndex, setGameIndex] = useState(0);
-  const sliderRef = useRef(null);
-  //
-  const [gameKey, setGameKey] = useState(0);
-  const [gamesSectionKey, setGamesSectionKey] = useState(0);
-  const [showOverlay, setShowOverlay] = useState(true);
-  //react title
-  const circles = useRef([]);
-
-  const games = [
-    <MemoryGame name={name} setGameKey={setGameKey} />,
-    <RockPaperScissors name={name} />,
-  ];
-
-  const handlePlay = (e) => {
-    const userName = window.prompt("Enter Your Name");
-    const isValid =
-      userName && userName.trim() !== "" && /^[a-zA-Z0-9]+$/.test(userName);
-    if (isValid) {
-      setName(userName);
-      // e.target.parentNode.style.display = "none";
-      setShowOverlay(false);
-    } else {
-      alert("Please enter a valid name using only letters or numbers!");
-    }
-  };
-
-  const scrollToIndex = (i) => {
-    if (sliderRef.current) {
-      const sectionWidth = sliderRef.current.offsetWidth;
-      sliderRef.current.scrollTo({
-        left: i * sectionWidth,
-        behavior: "smooth",
-      });
-    }
-  };
-
-  const nextGame = () => {
-    if (gameIndex === games.length - 1) return;
-    const newIndex = gameIndex + 1;
-    setGameIndex(newIndex);
-    scrollToIndex(newIndex);
-  };
-
-  const previousGame = () => {
-    if (gameIndex === 0) return;
-    const newIndex = gameIndex - 1;
-    setGameIndex(newIndex);
-    scrollToIndex(newIndex);
-  };
-
-  const quitGamesSection = () => {
-    setGamesSectionKey((prev) => prev + 1);
-    setShowOverlay(true);
-    setName("Come again boss... ");
-  };
-
-  useEffect(() => {
-    const animate = () => {
-      circles.current.forEach((circle, i) => {
-        const angle = (Date.now() / 1000 + (i * Math.PI) / 3) % (2 * Math.PI);
-        const radius = 50;
-        circle.style.transform = `
-          translateX(${Math.cos(angle) * radius}px)
-          translateY(${Math.sin(angle) * radius}px)
-          scale(${0.8 + Math.sin(angle) * 0.2})
-        `;
-      });
-      requestAnimationFrame(animate);
-    };
-    animate();
-  }, []);
-
   return (
     <section className="portfolio section-app" id="portfolio">
       <MainTitle title="Portfolio" />
       <ParaSection para="My goal Is to turning creative ideas into responsive and functional web designs." />
       <section className="work">
         <p className="work-title">My Work</p>
+        {/* Projects */}
         <div className="projects-container">
           {temps.map((temp, index) => (
             <Temp
@@ -110,24 +32,10 @@ export default function Portfolio() {
             />
           ))}
         </div>
+        {/* React Apps */}
         <div className="react-work">
           <p className="react-title">
-            <span className="react-animation">
-              React
-              {[...Array(6)].map((_, i) => (
-                <span
-                  key={i}
-                  ref={(el) => (circles.current[i] = el)}
-                  className="orbit-circle"
-                  style={{
-                    "--i": i,
-                    background: `hsl(${i * 60}, 90%, 90%)`,
-                    transition: "transform 0.3s ease-out",
-                  }}
-                />
-              ))}{" "}
-            </span>{" "}
-            Apps
+            <span className="react-animation">React</span> Apps
           </p>
           <AnimatedSection delay={0.1}>
             <div className="react-apps-grid">
@@ -145,63 +53,42 @@ export default function Portfolio() {
             </div>
           </AnimatedSection>
         </div>
-      </section>
-      {/* Games */}
-      <AnimatedSection delay={0.2}>
-        <div className="games-section" key={gamesSectionKey}>
-          <FontAwesomeIcon
-            className={`arr left `}
-            icon={faAngleLeft}
-            size="xl"
-            onClick={previousGame}
-            style={{
-              pointerEvents: gameIndex === 0 ? "none" : "auto",
-            }}
-          />
-          <div className="games-container" ref={sliderRef} key={gameKey}>
-            {games.map((game, index) => (
-              <div className="game-container" key={index}>
-                {game}
-              </div>
-            ))}
+        <div className="note-section">
+          <div className="note-portfolio">
+            <span className="highlight">Note:</span>
+            <p>
+              There are many more apps uploaded on GitHub, including
+              problem-solving solutions and competitive programming work.
+              Explore them through these links.
+            </p>
           </div>
-
-          <FontAwesomeIcon
-            className={`arr right`}
-            icon={faAngleRight}
-            size="xl"
-            onClick={nextGame}
-            style={{
-              pointerEvents: gameIndex === games.length - 1 ? "none" : "auto",
-            }}
-          />
-          {showOverlay ? (
-            <div className="start-game">
-              <h1>Get ready to play...</h1>
-              <span className="play" onClick={(e) => handlePlay(e)}>
-                <FontAwesomeIcon
-                  icon={faGamepad}
-                  size="xl"
-                  className="gamepad"
-                ></FontAwesomeIcon>
-                PLAY
-              </span>
-            </div>
-          ) : (
-            <button
-              className="quit-games-btn"
-              type="button"
-              onClick={quitGamesSection}
+          <div className="more-links">
+            <a
+              href="https://github.com/MohamedEzz524/React-apps"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              ✖️ Quit Games
-            </button>
-          )}
+              <span>➔</span> More react work{" "}
+            </a>
+            <a
+              href="https://github.com/MohamedEzz524/Css-animation"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span>➔</span> Css Animation
+            </a>
+            <a
+              href="https://github.com/MohamedEzz524/Problem-solving"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span>➔</span> Problem solving
+            </a>
+          </div>
         </div>
-      </AnimatedSection>
-
+      </section>
       {/* Outro */}
       <ParaSection para="Currently open to opportunities to apply my skills in real-world projects!" />
-      <ParaSection para="Knowledge is power. Here’s how I keep mine updated." />
     </section>
   );
 }

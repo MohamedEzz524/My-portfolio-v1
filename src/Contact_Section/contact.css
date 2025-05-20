@@ -17,30 +17,29 @@
 .contact-feedback-container {
   padding: 120px 0 150px;
   position: relative;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
-
+  border-top: 1px solid rgba(192, 132, 252, 0.2);
   @media (max-width: 993px) {
     padding: 50px 0;
   }
 }
 .contact-overlay {
   position: absolute;
-  left: -100px;
+  left: -60px;
   height: 100%;
   width: 100vw;
   top: 0;
-  background-image: url(../images/Contact/6.jpg);
+  background-image: url(../assets/images/p.webp);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
   /* background-attachment: fixed; */
-  filter: brightness(50%);
+  filter: brightness(30%);
   z-index: -99;
   @media (max-width: 1600px) {
-    left: -60px;
+    left: -30px;
   }
   @media (max-width: 768px) {
-    left: -30px;
+    left: 0px;
   }
 }
 /* 3 4 5 7 8 10 */
@@ -51,6 +50,9 @@
     width: 100%;
     margin-top: 100px;
   }
+  @media (max-width: 768px) {
+    padding: 20px;
+  }
 }
 
 .contact-input .send-message,
@@ -59,8 +61,8 @@
 .rate .rate-title {
   width: fit-content;
   font-size: 1.2rem;
-  font-size: clamp(1.2rem, 1.5vw + 0.3rem, 2rem);
-  font-weight: 600;
+  font-size: clamp(1.4rem, 1.5vw + 0.5rem, 2rem);
+  font-weight: bold;
   margin-bottom: 30px;
   letter-spacing: 1px;
   position: relative;
@@ -171,6 +173,7 @@
   }
   @media (max-width: 768px) {
     border-width: 1px;
+    padding: 20px;
   }
 }
 .feedback-speech {
@@ -190,6 +193,7 @@
   }
   @media (max-width: 768px) {
     letter-spacing: 0px;
+    padding: 20px;
   }
 }
 

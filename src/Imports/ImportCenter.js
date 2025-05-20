@@ -47,10 +47,13 @@ import {
   faCircleCheck,
   faP,
   faT,
+  faRocket,
+  faCode,
   faFlask, // Jest (testing)
   faLayerGroup, // Next.js (layered architecture)
   faCodeMerge, // Redux (state management)
   faPaintRoller, // Tailwind (styling)
+  faWind,
 } from "@fortawesome/free-solid-svg-icons";
 
 export {
@@ -101,4 +104,7 @@ export {
   faLink,
   faAngleDown,
   faDownload,
+  faCode,
+  faRocket,
+  faWind,
 };
